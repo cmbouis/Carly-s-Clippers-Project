@@ -1,0 +1,65 @@
+# Types of Hairstyles
+hairstyles = ["bouffant", "pixie", "dreadlocks", "crew", "bowl", "bob", "mohawk", "flattop"]
+
+# Hairstyle Prices
+prices = [30, 25, 40, 20, 20, 35, 50, 35]
+
+# Purchases of Hairstyles Last Week
+last_week = [2, 3, 5, 8, 4, 4, 6, 2]
+
+# Starting Total Price
+total_price = 0
+
+# Total Price Change Loop
+for price in prices:
+  total_price += price
+  
+# Total Price Loop Test
+print(total_price)
+
+# Average Price Calculation
+average_price = total_price / len(prices)
+
+# Average Haircut Price Printout
+print("Average Haircut Price: ${0}".format(average_price))
+
+# Hairstyle Price Alteration Loop
+new_prices = [price - 5 for price in prices]
+
+# Hairstyle Price Alteration Loop Test
+print(str(new_prices))
+
+# Starting Total Revenue
+total_revenue = 0
+
+# Total Revenue of Last Week
+for i in range(len(hairstyles)):
+  total_revenue += prices[i] *last_week[i]
+  
+# Last Week's Total Revenue Printout
+print("Total Revenue: ${0}".format(total_revenue))
+
+# Last Week's Average Daily Revenue Calculation
+average_daily_revenue = total_revenue / 7
+
+# Last Week's Average Daily Revenue Calculation Test
+print(average_daily_revenue)
+
+# Finding Cuts Under 30 Loop
+cuts_under_30 = [
+  hairstyles[i]
+  for i in range(len(hairstyles))
+  if new_prices[i] < 30
+]
+
+# Cuts Under 30 Loop Test
+print(cuts_under_30)
+
+
+# Displays:
+# 255
+# Average Haircut Price: $31.875
+# [25, 20, 35, 15, 15, 30, 45, 30]
+# Total Revenue: $1085
+# 155.0
+# ['bouffant', 'pixie', 'crew', 'bowl']
